@@ -1,0 +1,13 @@
+[
+    {
+        "imagen": "imagenes/WhatsApp Image 2023-08-16 at 14.46.51 (1).jpeg",
+        "titulo": "Flash Card 1",
+        "contenido": "Contenido de la tarjeta 1."
+    },
+    {
+        "imagen": "ruta/a/imagen2.jpg",
+        "titulo": "Flash Card 2",
+        "contenido": "Contenido de la tarjeta 2."
+    }
+]
+

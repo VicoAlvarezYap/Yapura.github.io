@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nuevoestilo.css">
+    <title>Perfumes de Niños</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Perfumes de Niños</h1>
+    </header>
+    <div id="flash-cards-container"></div>
+
+    <script>
+        // Leer el archivo JSON
+        fetch('Json/datosPerfumesNino.json')
+            .then(response => response.json())
+            .then(data => {
+                const flashCardsContainer = document.getElementById('flash-cards-container');
+                data.forEach(item => {
+                    const flashCard = document.createElement('div');
+                    flashCard.classList.add('flash-card');
+
+                    const cardContent = document.createElement('div');
+                    cardContent.classList.add('card-content');
+
+                    const image = document.createElement('img');
+                    image.src = item.imagen;
+                    const title = document.createElement('h2');
+                    title.textContent = item.titulo;
+
+                    const content = document.createElement('p');
+                    content.textContent = item.contenido;
+
+                    cardContent.appendChild(title);
+                    cardContent.appendChild(content);
+
+                    flashCard.appendChild(image);
+                    flashCard.appendChild(cardContent);
+                    flashCardsContainer.appendChild(flashCard);
+                });
+            })
+            .catch(error => console.error('Error al leer el archivo JSON:', error));
+    </script>
+</body>
+</html>
